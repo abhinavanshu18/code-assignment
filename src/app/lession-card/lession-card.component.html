@@ -1,0 +1,36 @@
+<div class="cardContainer">
+  <div class="flexRow">
+    <div class="subjectPhotoBlock">
+      <img width="40" height="40" class="subImage" src={{channel.subjectPhotoUrl}}>
+    </div>
+    <div class="contextBlock">
+      <div class="title">
+        {{channel.title}}
+      </div>
+      <div class="body">
+        {{channel.description}}
+      </div>
+    </div>
+
+    <!-- title:{ type: String, required: true },
+    description:{ type: String, required: true },
+    instructorName:{ type: String, required: true },
+    instructorPhotoUrl:{ type: String },
+    subjectPhotoUrl:{ type: String },
+    time:{ type: String, required: true } -->
+
+    <div class="instructorPhotoBlock">
+      <div class="instructorInfo">
+          <div class="instImg">
+            <img width="30" height="30" class="subImage" src={{channel.instructorPhotoUrl}}>
+          </div>
+          <div class="instName">
+            {{channel.instructorName}}
+          </div>
+      </div>
+    </div>
+    <div class="timeBlock">
+      {{getRedTimeFormatted(channel.time)}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngFor="let elem of channelListArrByDate">
+    <div>  
+      <div class="timeTitle">{{getDay(elem[0].time)}}, {{elem[0].time | date}}</div> 
+    </div>
+    <div *ngFor="let item of elem">
+      <app-lession-card [channel]="item"></app-lession-card>
+    </div>  
+  </div>
+</div>
