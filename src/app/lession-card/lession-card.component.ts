@@ -15,7 +15,7 @@ export class LessionCardComponent implements OnInit {
     console.log("LessionCardComponent : ", this.channel);
   }
 
-  getRedTimeFormatted(time) {
+  getTimeFormatted(time) {
     let getHours = (new Date(time)).getHours();
     let reqTime = "";
     if(getHours > 12) {

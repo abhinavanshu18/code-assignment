@@ -26,8 +26,7 @@ export class OnlineLessionListComponent implements OnInit {
 
   getChannelInFormatedOrder() {
     this.channelService.getChannels().subscribe((res: any) => {
-      this.channelList = res.channels.sort((elem1, elem2) => new Date(elem2.time) - new Date(elem1.time));
-     //  console.log("Channel List : ", this.channelList);
+      this.channelList = res.channels.sort((elem1, elem2) => Math.abs(<any>new Date(elem2.time) - <any>new Date(elem1.time)));
       var sameDayChannel = [];
       var checkingDate = this.channelList[0].time.split(' ')[0];
       this.channelList.map(item => {
@@ -39,7 +38,6 @@ export class OnlineLessionListComponent implements OnInit {
           checkingDate = item.time.split(' ')[0];
         }        
       })
-      console.log("channelListArrByDate : ", this.channelListArrByDate);
     });
   }
 }
